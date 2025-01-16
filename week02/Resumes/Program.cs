@@ -11,8 +11,6 @@ class Program
         job1._startYear = 2015;
         job1._endYear = 2020;
 
-        Console.WriteLine(job1.company);
-
         Job job2 = new Job();
 
         job2._company = "Microsoft";
@@ -20,6 +18,12 @@ class Program
         job2._startYear = 2020;
         job2._endYear = 2024;
 
-        Console.WriteLine(job2._company);
+        Resume resume = new Resume();
+        resume._name = "Brian Larsen";
+
+        resume._jobs.Add(job1);
+        resume._jobs.Add(job2);
+
+        resume.DisplayResume();
     }
 }
