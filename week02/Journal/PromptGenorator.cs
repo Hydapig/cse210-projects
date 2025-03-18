@@ -10,11 +10,28 @@ public class PromptGenorator
     "If I had one thing I could do over today, what would it be?"
     };
 
+    private List<string> _usedPrompts = new List<string>();
+
     public string GetRandomPrompt()
     {
+        if (_prompts.Count == 0)
+        {
+            // Reset if all prompts have been used
+            _prompts.AddRange(_usedPrompts);
+            _usedPrompts.Clear();
+        }
+
         Random random = new Random();
         int randomIndex = random.Next(_prompts.Count);
-        return _prompts[randomIndex];
+
+        string selectedPrompt = _prompts[randomIndex];
+
+        // Move the selected prompt from _prompts to _usedPrompts
+        // This makes sure all prompts from the list are used before repeating
+        _prompts.RemoveAt(randomIndex);
+        _usedPrompts.Add(selectedPrompt);
+
+        return selectedPrompt;
     }
 
 }
