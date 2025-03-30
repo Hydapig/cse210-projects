@@ -11,6 +11,6 @@ public class Comment
 
     public string DisplayComment()
     {
-        return $"{_userName}\n{_commentText}";
+        return $"{_userName}: {_commentText}";
     }
 }
