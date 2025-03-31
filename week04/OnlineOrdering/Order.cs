@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 public class Order
 {
     private List<Product> _products;
@@ -5,11 +8,10 @@ public class Order
     private double _totalPrice = 0;
     double _shippingCost;
 
-    // private string _packingLabel;
-    // private string _shippingLabel;
     public Order(Customer customer)
     {
         _customer = customer;
+        _products = new List<Product>();
         _shippingCost = _customer.IsInUSA() ? 5 : 35;
     }
     public void AddProducts(Product product)
@@ -28,12 +30,13 @@ public class Order
 
     public string PackingLabel()
     {
-        List<string> labels = new List<string>();
+        List<string> productList = new List<string>();
         foreach (var p in _products)
         {
-            labels.Add($"{p.GetName} (ID: {p.GetProductId})");
+            productList.Add(p.ProductList());
         }
-        return string.Join("\n", labels);
+        
+        return String.Join("\n", productList);
     }
 
     public string ShippingLabel()

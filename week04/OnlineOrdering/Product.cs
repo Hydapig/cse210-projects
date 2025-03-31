@@ -18,20 +18,25 @@ public class Product
         return _price * _quantity;
     }
 
-    public string GetName() 
-    { 
-        return _name; 
-    }
-    public string GetProductId()
+    public string ProductList()
     {
-        return _productId;
+        return $"{_name} (ID:{_productId})";
     }
-    public double GetPrice()
-    {
-        return _price;
-    }
-    public int GetQuantity()
-    {
-        return _quantity;
-    }
+
+    // public string GetName() 
+    // { 
+    //     return _name; 
+    // }
+    // public string GetProductId()
+    // {
+    //     return _productId;
+    // }
+    // public double GetPrice()
+    // {
+    //     return _price;
+    // }
+    // public int GetQuantity()
+    // {
+    //     return _quantity;
+    // }
 }
