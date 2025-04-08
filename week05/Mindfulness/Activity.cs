@@ -3,6 +3,7 @@ public class Activity
     protected string _name;
     protected string _description;
     protected int _duration;
+    protected string restart;
 
     protected DateTime _startTime;
     protected DateTime _endTime;
@@ -20,7 +21,7 @@ public class Activity
         Console.Clear();
         Console.WriteLine($"You have chosen the {_name} Activity.\n");
         Console.WriteLine(_description);
-        Console.WriteLine("\nHow many seconds would you like to spend in your session? ");
+        Console.Write("\nHow many seconds would you like to spend in your session? ");
         _duration = int.Parse(Console.ReadLine());
 
         Console.Clear();
@@ -33,6 +34,20 @@ public class Activity
     {
         Console.WriteLine();
         Console.WriteLine($"Great job completing the {_name} Activity!");
+    }
+
+    public bool RestartActivity()
+    {
+        Console.WriteLine();
+        Console.Write("Would you like to restart this activity? (y/n) ");
+        restart = Console.ReadLine();
+        return restart == "y";
+    }
+
+    public void ReturnToMenu()
+    {
+        Console.WriteLine();
+        Console.WriteLine("Returning to the menu...");
         DisplaySpinner(5);
     }
 
