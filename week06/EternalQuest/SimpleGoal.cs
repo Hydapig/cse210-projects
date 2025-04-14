@@ -14,6 +14,7 @@ public class SimpleGoal : Goal
             _isComplete = true;
             manager.AddPoints(_points);
         }
+        Console.WriteLine($"Great job completing your goal! You earned {_points}!\n");
     }
 
     public override bool IsComplete()
@@ -23,6 +24,6 @@ public class SimpleGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return $"SimpleGoal,{_name},{_description},{_points}";
+        return $"SimpleGoal,{_name},{_description},{_points},{_isComplete}";
     }
 }
