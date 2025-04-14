@@ -209,6 +209,7 @@ public class GoalManager
             Console.WriteLine("\nYou have not created any goals yet.");
             return;
         }
+        Console.Clear();
         Console.WriteLine("\nYour current goals are:");
         ListGoalNames();
         

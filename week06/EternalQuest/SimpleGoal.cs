@@ -14,7 +14,7 @@ public class SimpleGoal : Goal
             _isComplete = true;
             manager.AddPoints(_points);
         }
-        Console.WriteLine($"Great job completing your goal! You earned {_points}!\n");
+        Console.WriteLine($"Great job completing your goal! You earned {_points} points!\n");
     }
 
     public override bool IsComplete()
