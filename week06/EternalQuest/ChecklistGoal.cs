@@ -16,7 +16,7 @@ public class ChecklistGoal : Goal
         if (_amountCompleted == _target)
         {
             manager.AddPoints(_points + _bonus);
-            Console.WriteLine($"Great job! You earned {_points} plus {_bonus} bonus points for completing your goal!\n");
+            Console.WriteLine($"Great job! You earned {_points} points plus {_bonus} bonus points for completing your goal!\n");
             
         }
         else
