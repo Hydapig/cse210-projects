@@ -1,13 +1,13 @@
 public abstract class Activity
 {
-    private string _activityName;
-    private string _date;
-    private double _durationInMinutes;
+    public string _activityName { get;set; }
+    protected string _date;
+    protected double _durationInMinutes;
 
-    Activity(string date, double minutes)
+    public Activity(string date, double numberOfMinutes)
     {
         _date = date;
-        _durationInMinutes = minutes;
+        _durationInMinutes = numberOfMinutes;
     }
 
     public void SetActivityName(string name)
