@@ -1,10 +1,10 @@
 public abstract class Activity
 {
     public string _activityName { get;set; }
-    protected string _date;
+    protected DateTime _date;
     protected double _durationInMinutes;
 
-    public Activity(string date, double numberOfMinutes)
+    public Activity(DateTime date, double numberOfMinutes)
     {
         _date = date;
         _durationInMinutes = numberOfMinutes;
@@ -20,6 +20,6 @@ public abstract class Activity
 
     public string GetSummary()
     {
-        return $"{_date} {_activityName} ({_durationInMinutes} min) - Distance: {GetDistance()} miles, Speed: {GetSpeed()} mph, Pace: {GetPace()} min per mile";
+        return $"{_date.ToString("dd MMM yyyy")} {_activityName} ({_durationInMinutes} min) - Distance: {GetDistance():0.0} miles, Speed: {GetSpeed():0.0} mph, Pace: {GetPace():0.00} min per mile";
     }
 }

@@ -1,7 +1,7 @@
 public class SwimmingActivity : Activity
 {
     private int _numberOfLaps;
-    SwimmingActivity(string date, double numberOfMinutes, int numberOfLaps) : base(date,numberOfMinutes)
+    public SwimmingActivity(DateTime date, double numberOfMinutes, int numberOfLaps) : base(date,numberOfMinutes)
     {
         _activityName = "Swimming";
         _numberOfLaps = numberOfLaps;
@@ -9,17 +9,14 @@ public class SwimmingActivity : Activity
 
     public override double GetDistance()
     {
-        double distance = _numberOfLaps * 50 / 1000 * 0.62;
-        return distance;
+        return _numberOfLaps * 50 / 1000.0 * 0.62;
     }
     public override double GetSpeed()
     {
-        double speed = (GetDistance() / _durationInMinutes) * 60;
-        return speed;
+        return (GetDistance() / _durationInMinutes) * 60;
     }
     public override double GetPace()
     {
-        double pace = _durationInMinutes / GetDistance();
-        return pace;
+        return _durationInMinutes / GetDistance();
     }
 }
